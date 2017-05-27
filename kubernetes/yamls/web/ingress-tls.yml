@@ -9,10 +9,10 @@ metadata:
 spec:
   tls:
   - hosts:
-    - api.eventyay.com
+    - openeventor.ga
     secretName: eventyay-api-tls
   rules:
-  - host: api.eventyay.com
+  - host: openeventor.ga
     http:
       paths:
       - path: /
