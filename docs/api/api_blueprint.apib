@@ -301,7 +301,7 @@ Authorized user should be same as user in request body or must be admin.
                 "logo-width": null,
                 "logo-height": null
               },
-              "type": "image_size",
+              "type": "image-size",
               "id": "1",
               "links": {
                 "self": "/v1/image-sizes/1"
@@ -362,7 +362,7 @@ Authorized user should be same as user in request body or must be admin.
                   "logo-width": null,
                   "logo-height": null
                 },
-                "type": "image_size"
+                "type": "image-size"
               }
             }
 
@@ -405,7 +405,7 @@ Authorized user should be same as user in request body or must be admin.
               "logo-width": null,
               "logo-height": null
             },
-            "type": "image_size",
+            "type": "image-size",
             "id": "1",
             "links": {
               "self": "/v1/image-sizes/1"
@@ -450,7 +450,7 @@ Authorized user should be same as user in request body or must be admin.
                   "logo-width": null,
                   "logo-height": null
                 },
-                "type": "image_size",
+                "type": "image-size",
                 "id": "1",
               }
             }
@@ -475,7 +475,7 @@ Authorized user should be same as user in request body or must be admin.
               "logo-width": null,
               "logo-height": null
             },
-            "type": "image_size",
+            "type": "image-size",
             "id": "1",
             "links": {
               "self": "/v1/image-sizes/1"
@@ -540,7 +540,7 @@ Authorized user should be same as user in request body or must be admin.
                 "language": "English",
                 "index": 0
               },
-              "type": "image_size",
+              "type": "image-size",
               "id": "1",
               "links": {
                 "self": "/v1/image-sizes/1"
@@ -1453,7 +1453,7 @@ Authorized user should be same as user in request body or must be admin.
                 "link": "http://facebook.com/facebook",
                 "name": "Facebook Url"
               },
-              "type": "social_link",
+              "type": "social-link",
               "id": "1",
               "links": {
                 "self": "/v1/social-links/1"
@@ -1487,7 +1487,7 @@ Authorized user should be same as user in request body or must be admin.
                   "name": "Facebook Url",
                   "link": "http://facebook.com/facebook"
                 },
-                "type": "social_link"
+                "type": "social-link"
               }
             }
 
@@ -1507,7 +1507,7 @@ Authorized user should be same as user in request body or must be admin.
               "link": "http://facebook.com/facebook",
               "name": "Facebook Url"
             },
-            "type": "social_link",
+            "type": "social-link",
             "id": "1",
             "links": {
               "self": "/v1/social-links/1"
@@ -1551,7 +1551,7 @@ Authorized user should be same as user in request body or must be admin.
               "link": "http://facebook.com/facebook",
               "name": "Facebook Url"
             },
-            "type": "social_link",
+            "type": "social-link",
             "id": "1",
             "links": {
               "self": "/v1/social-links/1"
@@ -1587,7 +1587,7 @@ Authorized user should be same as user in request body or must be admin.
                   "name": "Facebook Page Url",
                   "link": "http://facebook.com/facebook"
                 },
-                "type": "social_link",
+                "type": "social-link",
                 "id": "1"
               }
             }
@@ -1608,7 +1608,7 @@ Authorized user should be same as user in request body or must be admin.
               "link": "http://facebook.com/facebook",
               "name": "Facebook Page Url"
             },
-            "type": "social_link",
+            "type": "social-link",
             "id": "1",
             "links": {
               "self": "/v1/social-links/1"
@@ -2268,7 +2268,7 @@ Authorized user should be same as user in request body or must be admin.
                 "hash": null,
                 "private": null
               },
-              "type": "speakers_call",
+              "type": "speakers-call",
               "id": "1",
               "links": {
                 "self": "/v1/speakers-calls/1"
@@ -2309,7 +2309,7 @@ Authorized user should be same as user in request body or must be admin.
                   "hash": null,
                   "private": null
                 },
-                "type": "speakers_call"
+                "type": "speakers-call"
               }
             }
 
@@ -2333,7 +2333,7 @@ Authorized user should be same as user in request body or must be admin.
               "hash": null,
               "private": null
             },
-            "type": "speakers_call",
+            "type": "speakers-call",
             "id": "1",
             "links": {
               "self": "/v1/speakers-calls/1"
@@ -2350,7 +2350,7 @@ Authorized user should be same as user in request body or must be admin.
 
 ## Speakers Call Details [/speakers-calls/{speakers_call_id}]
 + Parameters
-    + speakers_call_id (integer) - ID of the speaker call in the form of an integer
+    + speakers_call_id (integer) - ID of the session in the form of an integer
 
 ### Speakers Call Details [GET]
 
@@ -2381,7 +2381,7 @@ Authorized user should be same as user in request body or must be admin.
               "hash": null,
               "private": null
             },
-            "type": "speakers_calls",
+            "type": "speakers-calls",
             "id": "1",
             "links": {
               "self": "/v1/speakers-calls/1"
@@ -2422,7 +2422,7 @@ Authorized user should be same as user in request body or must be admin.
                   "hash": null,
                   "private": null
                 },
-                "type": "speakers_call",
+                "type": "speakers-call",
                 "id": "1"
               }
             }
@@ -2446,7 +2446,7 @@ Authorized user should be same as user in request body or must be admin.
               "hash": null,
               "private": null
             },
-            "type": "speakers_call",
+            "type": "speakers-call",
             "id": "1",
             "links": {
               "self": "/v1/speakers-call/1"
@@ -2765,7 +2765,7 @@ Authorized user should be same as user in request body or must be admin.
         }
 
         
-### Update Speakers Call [PATCH]
+### Update Session [PATCH]
 
 + id (integer) - ID of the record to update **(required)**
 + title (string) - Title of the Session **(required)**
@@ -2887,6 +2887,256 @@ Authorized user should be same as user in request body or must be admin.
         }
 
 ### Delete Session [DELETE]
+
++ Request
+
+    + Headers
+
+            Accept: application/vnd.api+json
+
+            Authorization: JWT <Auth Key>
+
++ Response 200 (application/vnd.api+json)
+
+        {
+          "meta": {
+            "message": "Object successfully deleted"
+          },
+          "jsonapi": {
+            "version": "1.0"
+          }
+        }
+
+## Session Type Collection [/events/{event_id}/session-types?page,limit]
++ Parameters
+    + event_id (integer) - ID of the spcific event in integer
+
+### List All Session Types [GET]
+
++ Request
+
+    + Headers
+
+            Accept: application/vnd.api+json
+
+            Authorization: JWT <Auth Key>
+
++ Response 200 (application/vnd.api+json)
+
+        {
+          "meta": {
+            "count": 1
+          },
+          "data": [
+            {
+              "relationships": {
+                "event": {
+                  "links": {
+                    "self": "/v1/session-types/22/relationships/event",
+                    "related": "/v1/session-types/22/event"
+                  }
+                }, 
+                "sessions": {
+                  "links": {
+                    "self": "/v1/session-types/22/relationships/sessions",
+                    "related": "/v1/session-types/22/sessions"
+                  }
+                }
+              },
+              "attributes": {
+                "name": "Workshop",
+                "length": "1:00:00"
+              },
+              "type": "session-type",
+              "id": "22",
+              "links": {
+                "self": "/v1/session-types/22"
+              }
+            }
+          ],
+          "jsonapi": {
+            "version": "1.0"
+          },
+          "links": {
+            "self": "/v1/session-types"
+          }
+        }
+
+
+### Create Session Type [POST]
+
++ name (string) - Name of the Session Type **(required)**
++ length (string) - Length of the Session Type **(optional)**
+
++ Request (application/vnd.api+json)
+    
+    + Headers
+
+            Authorization: JWT <Auth Key>
+
+    + Body
+    
+            {
+              "data": {
+                "attributes": {
+                  "name": "Workshop",
+                  "length": "1:00:00"
+                },
+                "type": "session-type"
+              }
+            }
+
+
++ Response 200 (application/vnd.api+json)
+
+        {
+          "data": {
+            "relationships": {
+              "event": {
+                "links": {
+                  "self": "/v1/session-types/22/relationships/event",
+                  "related": "/v1/session-types/22/event"
+                }
+              }, 
+              "sessions": {
+                "links": {
+                  "self": "/v1/session-types/22/relationships/sessions",
+                  "related": "/v1/session-types/22/sessions"
+                }
+              }
+            },
+            "attributes": {
+              "name": "Workshop",
+              "length": "1:00:00"
+            },
+            "type": "session_type",
+            "id": "22",
+            "links": {
+              "self": "/v1/session-types/22"
+            }
+          },
+          "jsonapi": {
+            "version": "1.0"
+          },
+          "links": {
+            "self": "/v1/session-types/22"
+          }
+        }
+        
+
+## Session Type Details [/session-types/{session_type_id}]
++ Parameters
+    + session_type_id (integer) - ID of the session_type in the form of an integer
+
+### Session Details [GET]
+
++ Request
+
+    + Headers
+
+            Accept: application/vnd.api+json
+
+            Authorization: JWT <Auth Key>
+
++ Response 200 (application/vnd.api+json)
+
+        {
+          "data": {
+            "relationships": {
+              "event": {
+                "links": {
+                  "self": "/v1/session-types/22/relationships/event",
+                  "related": "/v1/session-types/22/event"
+                }
+              }, 
+              "sessions": {
+                "links": {
+                  "self": "/v1/session-types/22/relationships/sessions",
+                  "related": "/v1/session-types/22/sessions"
+                }
+              }
+            },
+            "attributes": {
+              "name": "Workshop",
+              "length": "1:00:00"
+            },
+            "type": "session-type",
+            "id": "1",
+            "links": {
+              "self": "/v1/session-types/1"
+            }
+          },
+          "jsonapi": {
+            "version": "1.0"
+          },
+          "links": {
+            "self": "/v1/session-types/1"
+          }
+        }
+
+        
+### Update Session Type [PATCH]
+
++ id (integer) - ID of the record to update **(required)**
++ name (string) - Name of the Session Type **(required)**
++ length (string) - Length of the Session Type **(optional)**
+
++ Request (application/vnd.api+json)
+    
+    + Headers
+
+            Authorization: JWT <Auth Key>
+
+    + Body
+
+            {
+              "data": {
+                "attributes": {
+                  "name": "Workshop",
+                  "length": "1:00:00"
+                },
+                "type": "session-type",
+                "id": "22"
+              }
+            }
+
++ Response 200 (application/vnd.api+json)
+
+        {
+          "data": {
+            "relationships": {
+              "event": {
+                "links": {
+                  "self": "/v1/session-types/22/relationships/event",
+                  "related": "/v1/session-types/22/event"
+                }
+              }, 
+              "sessions": {
+                "links": {
+                  "self": "/v1/session-types/22/relationships/sessions",
+                  "related": "/v1/session-types/22/sessions"
+                }
+              }
+            },
+            "attributes": {
+              "name": "Workshop",
+              "length": "1:00:00"
+            },
+            "type": "session-type",
+            "id": "21",
+            "links": {
+              "self": "/v1/session-types/22"
+            }
+          },
+          "jsonapi": {
+            "version": "1.0"
+          },
+          "links": {
+            "self": "/v1/session-types/22"
+          }
+        }
+
+### Delete Session Type [DELETE]
 
 + Request
 
