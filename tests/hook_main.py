@@ -18,8 +18,6 @@ from app.factories.notification import NotificationFactory
 from app.factories.event import EventFactoryBasic
 from app.factories.social_link import SocialLinkFactory
 from app.factories.image_size import ImageSizeFactory
-from app.factories.page import PageFactory
-from app.factories.event_type import EventTypeFactory
 
 stash = {}
 api_username = "open_event_test_user@fossasia.org"
@@ -41,8 +39,7 @@ def obtain_token():
 
 
 def create_super_admin(email, password):
-    user = UserFactory(email=email, password=password, is_super_admin=True,
-                       is_admin=True, is_verified=True)
+    user = UserFactory(email=email, password=password, is_super_admin=True, is_admin=True, is_verified=True)
     db.session.add(user)
     db.session.commit()
     return user
@@ -949,10 +946,7 @@ def page_get_list(transaction):
     :param transaction:
     :return:
     """
-    with stash['app'].app_context():
-        page = PageFactory()
-        db.session.add(page)
-        db.session.commit()
+    transaction['skip'] = True
 
 
 @hooks.before("Pages > Page Collection > Create Page")
@@ -962,7 +956,7 @@ def page_post(transaction):
     :param transaction:
     :return:
     """
-    pass
+    transaction['skip'] = True
 
 
 @hooks.before("Pages > Page Details > Get Page Details")
@@ -972,10 +966,7 @@ def page_get_detail(transaction):
     :param transaction:
     :return:
     """
-    with stash['app'].app_context():
-        page = PageFactory()
-        db.session.add(page)
-        db.session.commit()
+    transaction['skip'] = True
 
 
 @hooks.before("Pages > Page Details > Update Page")
@@ -985,10 +976,7 @@ def page_patch(transaction):
     :param transaction:
     :return:
     """
-    with stash['app'].app_context():
-        page = PageFactory()
-        db.session.add(page)
-        db.session.commit()
+    transaction['skip'] = True
 
 
 @hooks.before("Pages > Page Details > Delete Page")
@@ -998,10 +986,7 @@ def page_delete(transaction):
     :param transaction:
     :return:
     """
-    with stash['app'].app_context():
-        page = PageFactory()
-        db.session.add(page)
-        db.session.commit()
+    transaction['skip'] = True
 
 
 # ------------------------- Settings -------------------------
@@ -1090,16 +1075,6 @@ def image_upload_post(transaction):
     transaction['skip'] = True
 
 
-@hooks.before("Upload > File Upload > Upload a File")
-def file_upload_post(transaction):
-    """
-
-    :param transaction:
-    :return:
-    """
-    transaction['skip'] = True
-
-
 # ------------------------- Event Types -------------------------
 
 @hooks.before("Event Types > Event Types Collection > List All Event Types")
@@ -1109,10 +1084,7 @@ def event_type_get_list(transaction):
     :param transaction:
     :return:
     """
-    with stash['app'].app_context():
-        event_type = EventTypeFactory()
-        db.session.add(event_type)
-        db.session.commit()
+    transaction['skip'] = True
 
 
 @hooks.before("Event Types > Event Types Collection > Create Event Type")
@@ -1122,10 +1094,7 @@ def event_type_post(transaction):
     :param transaction:
     :return:
     """
-    with stash['app'].app_context():
-        event_type = EventTypeFactory()
-        db.session.add(event_type)
-        db.session.commit()
+    transaction['skip'] = True
 
 
 @hooks.before("Event Types > Event Type Details > Event Type Details")
@@ -1135,10 +1104,7 @@ def event_type_get_detail(transaction):
     :param transaction:
     :return:
     """
-    with stash['app'].app_context():
-        event_type = EventTypeFactory()
-        db.session.add(event_type)
-        db.session.commit()
+    transaction['skip'] = True
 
 
 @hooks.before("Event Types > Event Type Details > Update Event Type")
@@ -1148,10 +1114,7 @@ def event_type_patch(transaction):
     :param transaction:
     :return:
     """
-    with stash['app'].app_context():
-        event_type = EventTypeFactory()
-        db.session.add(event_type)
-        db.session.commit()
+    transaction['skip'] = True
 
 
 @hooks.before("Event Types > Event Type Details > Delete Event Type")
@@ -1161,10 +1124,7 @@ def event_type_delete(transaction):
     :param transaction:
     :return:
     """
-    with stash['app'].app_context():
-        event_type = EventTypeFactory()
-        db.session.add(event_type)
-        db.session.commit()
+    transaction['skip'] = True
 
 
 # ------------------------- Event Topics -------------------------
