@@ -8,7 +8,7 @@ class SettingFactory(factory.alchemy.SQLAlchemyModelFactory):
         model = Setting
         sqlalchemy_session = db.session
 
-	app_environment= common.string_
+	app_environment= "production"
     app_name= common.string_
     tagline= common.string_
     secret= common.string_
