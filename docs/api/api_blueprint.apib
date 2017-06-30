@@ -4581,9 +4581,9 @@ Get a list of Tickets.
                 "type": "VIP-ticket",
                 "price": 100.00,
                 "quantity": 100,
-                "description-toggle": False,
-                "position": null,
-                "is-fee-absorbed": null,
+                "description-toggle": false,
+                "position": 1,
+                "is-fee-absorbed": false,
                 "sales-starts-at": "2017-06-01T01:24:47.500127+00:00",
                 "sales-ends-at": "2017-06-30T00:24:47.500127+00:00",
                 "is-hidden": False,
@@ -4626,8 +4626,8 @@ Create a new ticket using an event_id.
                   "price": 100.00,
                   "quantity": 100,
                   "description-toggle": false,
-                  "position": null,
-                  "is-fee-absorbed": null,
+                  "position": 1,
+                  "is-fee-absorbed": false,
                   "sales-starts-at": "2017-06-01T01:24:47.500127+00:00",
                   "sales-ends-at": "2017-06-30T00:24:47.500127+00:00",
                   "is-hidden": false,
@@ -4646,8 +4646,8 @@ Create a new ticket using an event_id.
             "relationships": {
               "event": {
                 "links": {
-                  "self": "/v1/tickets/2/relationships/event",
-                  "related": "/v1/tickets/2/event"
+                  "self": "/v1/tickets/1/relationships/event",
+                  "related": "/v1/tickets/1/event"
                 }
               }
             },
@@ -4658,8 +4658,8 @@ Create a new ticket using an event_id.
               "price": 100.00,
               "quantity": 100,
               "description-toggle": false,
-              "position": null,
-              "is-fee-absorbed": null,
+              "position": 1,
+              "is-fee-absorbed": false,
               "sales-starts-at": "2017-06-01T01:24:47.500127+00:00",
               "sales-ends-at": "2017-06-30T00:24:47.500127+00:00",
               "is-hidden": false,
@@ -4667,16 +4667,16 @@ Create a new ticket using an event_id.
               "max-order": 100
             },
             "type": "ticket",
-            "id": "2",
+            "id": "1",
             "links": {
-              "self": "/v1/tickets/2"
+              "self": "/v1/tickets/1"
             }
           },
           "jsonapi": {
             "version": "1.0"
           },
           "links": {
-            "self": "/v1/tickets/2"
+            "self": "/v1/tickets/1"
           }
         }
 
@@ -4703,8 +4703,8 @@ Get a single ticket.
             "relationships": {
               "event": {
                 "links": {
-                  "self": "/v1/tickets/2/relationships/event",
-                  "related": "/v1/tickets/2/event"
+                  "self": "/v1/tickets/1/relationships/event",
+                  "related": "/v1/tickets/1/event"
                 }
               }
             },
@@ -4715,8 +4715,8 @@ Get a single ticket.
               "price": 100.00,
               "quantity": 100,
               "description-toggle": false,
-              "position": null,
-              "is-fee-absorbed": null,
+              "position": 1,
+              "is-fee-absorbed": false,
               "sales-starts-at": "2017-06-01T01:24:47.500127+00:00",
               "sales-ends-at": "2017-06-30T00:24:47.500127+00:00",
               "is-hidden": false,
@@ -4724,7 +4724,7 @@ Get a single ticket.
               "max-order": 100
             },
             "type": "ticket",
-            "id": "2",
+            "id": "1",
             "links": {
               "self": "/v1/tickets/2"
             }
@@ -4733,7 +4733,7 @@ Get a single ticket.
             "version": "1.0"
           },
           "links": {
-            "self": "/v1/tickets/2"
+            "self": "/v1/tickets/1"
           }
         }
 
@@ -4760,8 +4760,8 @@ Update a single ticket by `id`.
                   "price": 100.00,
                   "quantity": 100,
                   "description-toggle": false,
-                  "position": null,
-                  "is-fee-absorbed": null,
+                  "position": 1,
+                  "is-fee-absorbed": false,
                   "sales-starts-at": "2017-06-01T01:24:47.500127+00:00",
                   "sales-ends-at": "2017-06-30T00:24:47.500127+00:00",
                   "is-hidden": false,
@@ -4769,7 +4769,7 @@ Update a single ticket by `id`.
                   "max-order": 100
                 },
                 "type": "ticket",
-                "id": "2"
+                "id": "1"
               }
             }
 
@@ -4780,8 +4780,8 @@ Update a single ticket by `id`.
             "relationships": {
               "event": {
                 "links": {
-                  "self": "/v1/tickets/2/relationships/event",
-                  "related": "/v1/tickets/2/event"
+                  "self": "/v1/tickets/1/relationships/event",
+                  "related": "/v1/tickets/1/event"
                 }
               }
             },
@@ -4792,8 +4792,8 @@ Update a single ticket by `id`.
               "price": 100.00,
               "quantity": 100,
               "description-toggle": false,
-              "position": null,
-              "is-fee-absorbed": null,
+              "position": 1,
+              "is-fee-absorbed": false,
               "sales-starts-at": "2017-06-01T01:24:47.500127+00:00",
               "sales-ends-at": "2017-06-30T00:24:47.500127+00:00",
               "is-hidden": false,
@@ -4801,16 +4801,16 @@ Update a single ticket by `id`.
               "max-order": 100
             },
             "type": "ticket",
-            "id": "2",
+            "id": "1",
             "links": {
-              "self": "/v1/tickets/2"
+              "self": "/v1/tickets/1"
             }
           },
           "jsonapi": {
             "version": "1.0"
           },
           "links": {
-            "self": "/v1/tickets/2"
+            "self": "/v1/tickets/1"
           }
         }
 

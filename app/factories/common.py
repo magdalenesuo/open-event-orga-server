@@ -9,6 +9,7 @@ dateEnd_ = '2016-12-14T23:59:59.123456+00:00'
 country_ = 'US'
 currency_ = 'USD'
 float_ = '1.23456789'
+integer_ = '10'
 timezone_ = 'UTC'
 slug_ = 'camp-trip-retreat'
 
