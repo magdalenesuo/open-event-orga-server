@@ -1,5 +1,5 @@
 import factory
-from app.models.setting import Setting
+from app.models.setting import db, Setting
 import app.factories.common as common
 
 
