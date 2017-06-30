@@ -27,6 +27,7 @@ from app.factories.event_invoice import EventInvoiceFactory
 from app.factories.event_sub_topic import EventSubTopicFactory
 from app.factories.sponsor import SponsorFactory
 from app.factories.speakers_call import SpeakersCallFactory
+from app.factories.setting import SettingFactory
 
 stash = {}
 api_username = "open_event_test_user@fossasia.org"
@@ -1060,23 +1061,29 @@ def page_delete(transaction):
 # ------------------------- Settings -------------------------
 
 @hooks.before("Settings > Settings Details > Show Settings")
-def settings_get_list(transaction):
+def settings_get_detail(transaction):
     """
     GET /settings
     :param transaction:
     :return:
     """
-    transaction['skip'] = True
+    with stash['app'].app_context():
+        setting = SettingFactory()
+        db.session.add(setting)
+        db.session.commit()
 
 
 @hooks.before("Settings > Settings Details > Update Settings")
-def settings_post(transaction):
+def settings_patch(transaction):
     """
-    POST /settings
+    PATCH /settings
     :param transaction:
     :return:
     """
-    transaction['skip'] = True
+    with stash['app'].app_context():
+        setting = SettingFactory()
+        db.session.add(setting)
+        db.session.commit()
 
 
 # ------------------------- Discount Codes -------------------------
