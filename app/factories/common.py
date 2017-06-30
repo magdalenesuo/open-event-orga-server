@@ -11,6 +11,7 @@ currency_ = 'USD'
 float_ = '1.23456789'
 timezone_ = 'UTC'
 slug_ = 'camp-trip-retreat'
+clientID_ = 'example.apps.googleusercontent.com'
 
 
 def socialUrl_(name):
