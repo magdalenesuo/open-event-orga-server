@@ -59,7 +59,7 @@ api.route(RoleDetail, 'role_detail', '/roles/<int:id>')
 
 # tickets
 api.route(TicketList, 'ticket_list', '/events/<int:event_id>/tickets',
-          '/events/<event_identifier>/tickets', '/ticket-tags/<int:ticket_tag_id>/tickets')
+          '/events/<event_identifier>/tickets','/ticket-tags/<int:ticket_tag_id>/tickets')
 api.route(TicketDetail, 'ticket_detail', '/tickets/<int:id>', '/attendees/<int:attendee_id>/ticket')
 api.route(TicketRelationship, 'ticket_event', '/tickets/<int:id>/relationships/event')
 api.route(TicketRelationship, 'ticket_ticket_tag', '/tickets/<int:id>/relationships/ticket-tags')

@@ -69,7 +69,7 @@ class TicketSchema(Schema):
                          related_view_kwargs={'ticket_id': '<id>'},
                          schema='EventSchema',
                          type_='event')
-    ticket_tags = Relationship(attribute='tags',
+    ticket_tags = Relationship(attribute='ticket_tag',
                                self_view='v1.ticket_ticket_tag',
                                self_view_kwargs={'id': '<id>'},
                                related_view='v1.ticket_tag_list',

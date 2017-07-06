@@ -38,6 +38,7 @@ from app.factories.track import TrackFactory
 from app.factories.ticket_tag import TicketTagFactory
 from app.factories.role import RoleFactory
 from app.factories.module import ModuleFactory
+from app.factories.ticket_tag import TicketTagFactory
 
 stash = {}
 api_username = "open_event_test_user@fossasia.org"
