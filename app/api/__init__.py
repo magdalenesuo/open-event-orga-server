@@ -2,6 +2,7 @@ from app.api.bootstrap import api
 from app.api.ticket_fees import TicketFeeList, TicketFeeDetail
 from app.api.users import UserList, UserDetail, UserRelationship
 from app.api.notifications import NotificationList, NotificationDetail, NotificationRelationship
+from app.api.email_notifications import EmailNotificationList, EmailNotificationDetail, EmailNotificationRelationship
 from app.api.tickets import TicketList, TicketDetail, TicketRelationship
 from app.api.events import EventList, EventDetail, EventRelationship
 from app.api.event_types import EventTypeList, EventTypeDetail, EventTypeRelationship
@@ -46,6 +47,14 @@ api.route(NotificationList, 'notification_list', '/users/<int:id>/notifications'
 api.route(NotificationDetail, 'notification_detail', '/notifications/<int:id>')
 api.route(NotificationRelationship, 'notification_user',
           '/notifications/<int:id>/relationships/user')
+
+# email_notifications
+api.route(EmailNotificationList, 'email_notification_list', '/users/<int:id>/email-notifications')
+api.route(EmailNotificationDetail, 'email_notification_detail', '/email-notifications/<int:id>')
+api.route(EmailNotificationRelationship, 'email_notification_user',
+          '/email-notifications/<int:id>/relationships/user')
+api.route(EmailNotificationRelationship, 'email_notification_event',
+          '/email-notifications/<int:id>/relationships/event')
 
 # image_sizes
 api.route(ImageSizeList, 'image_size_list', '/image-sizes')
@@ -110,7 +119,8 @@ api.route(EventDetail, 'event_detail', '/events/<int:id>', '/events/<identifier>
           '/event-invoices/<int:event_invoice_id>/event', '/discount-codes/<int:discount_code_id>/event',
           '/sessions/<int:session_id>/event', '/ticket-tags/<int:ticket_tag_id>/event',
           '/role-invites/<int:role_invite_id>/event', '/users-events-roles/<int:users_events_role_id>/event',
-          '/speakers/<int:speaker_id>/event', '/access-codes/<int:access_code_id>/event')
+          '/speakers/<int:speaker_id>/event', '/access-codes/<int:access_code_id>/event',
+          '/email-notifications/<int:email_notification_id>/event')
 api.route(EventRelationship, 'event_ticket', '/events/<int:id>/relationships/tickets',
           '/events/<identifier>/relationships/tickets')
 api.route(EventRelationship, 'event_ticket_tag', '/events/<int:id>/relationships/ticket-tags',

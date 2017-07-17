@@ -13,6 +13,7 @@ class EmailNotification(db.Model):
     after_ticket_purchase = db.Column(db.Integer)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id', ondelete='CASCADE'))
     event_id = db.Column(db.Integer, db.ForeignKey('events.id', ondelete='CASCADE'))
+    event = db.relationship("Event")
 
     def __init__(self,
                  next_event=0,

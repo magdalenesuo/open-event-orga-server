@@ -24,6 +24,7 @@ from app.models.session_type import SessionType
 from app.models.discount_code import DiscountCode
 from app.models.event_invoice import EventInvoice
 from app.models.speakers_call import SpeakersCall
+from app.models.email_notification import EmailNotification
 from app.models.role_invite import RoleInvite
 from app.models.users_events_role import UsersEventsRoles
 from app.models.ticket import TicketTag
@@ -31,6 +32,7 @@ from app.models.access_code import AccessCode
 from app.models.user import User, ATTENDEE, ORGANIZER
 from app.models.users_events_role import UsersEventsRoles
 from app.models.role import Role
+from app.models.microlocation import Microlocation
 from app.api.helpers.db import save_to_db, safe_query
 from app.api.helpers.exceptions import UnprocessableEntity
 from app.api.helpers.files import create_save_image_sizes
@@ -416,6 +418,30 @@ class EventDetail(ResourceDetail):
             else:
                 if speaker.event_id:
                     view_kwargs['id'] = speaker.event_id
+                else:
+                    view_kwargs['id'] = None
+
+        if view_kwargs.get('email_notification_id'):
+            try:
+                email_notification = self.session.query(EmailNotification).filter_by(id=view_kwargs['email_notification_id']).one()
+            except NoResultFound:
+                raise ObjectNotFound({'parameter': 'email_notification_id'},
+                                     "Email Notification: {} not found".format(view_kwargs['email_notification_id']))
+            else:
+                if email_notification.event_id:
+                    view_kwargs['id'] = email_notification.event_id
+                else:
+                    view_kwargs['id'] = None
+
+        if view_kwargs.get('microlocation_id'):
+            try:
+                microlocation = self.session.query(Microlocation).filter_by(id=view_kwargs['microlocation_id']).one()
+            except NoResultFound:
+                raise ObjectNotFound({'parameter': 'microlocation_id'},
+                                     "Microlocation: {} not found".format(view_kwargs['microlocation_id']))
+            else:
+                if microlocation.event_id:
+                    view_kwargs['id'] = microlocation.event_id
                 else:
                     view_kwargs['id'] = None
 
