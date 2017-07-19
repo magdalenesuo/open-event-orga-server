@@ -6,6 +6,7 @@ from flask import request
 from sqlalchemy.orm.exc import NoResultFound
 from app.models import db
 from app.models.email_notification import EmailNotification
+from app.models.access_code import AccessCode
 
 
 def second_order_decorator(inner_dec):
@@ -101,6 +102,12 @@ def is_user_itself(f):
             except NoResultFound, e:
                 return NotFoundError({'parameter': 'email_notification_id'}, 'EmailNotification not found.').respond()
             kwargs['id'] = email_notification.user_id
+        if 'access_code_id' in kwargs:
+            try:
+                access_code = AccessCode.query.filter_by(id=kwargs['access_code_id']).one()
+            except NoResultFound, e:
+                return NotFoundError({'parameter': 'access_code_id'}, 'AccessCode not found.').respond()
+            kwargs['id'] = access_code.marketer_id
         if not user.is_admin and not user.is_super_admin and user.id != kwargs['id']:
             return ForbiddenError({'source': ''}, 'Access Forbidden').respond()
         return f(*args, **kwargs)

@@ -71,6 +71,13 @@ class DiscountCodeSchemaTicket(Schema):
                          related_view_kwargs={'discount_code_id': '<id>'},
                          schema='EventSchema',
                          type_='event')
+    marketer = Relationship(attribute='marketer',
+                            self_view='v1.discount_code_user',
+                            self_view_kwargs={'id': '<id>'},
+                            related_view='v1.user_detail',
+                            related_view_kwargs={'discount_code_id': '<id>'},
+                            schema='UserSchema',
+                            type_='user')
 
 
 class DiscountCodeSchemaEvent(Schema):
@@ -128,6 +135,13 @@ class DiscountCodeSchemaEvent(Schema):
                           related_view_kwargs={'discount_code_id': '<id>'},
                           schema='EventSchema',
                           type_='event')
+    marketer = Relationship(attribute='marketer',
+                            self_view='v1.discount_code_user',
+                            self_view_kwargs={'id': '<id>'},
+                            related_view='v1.user_detail',
+                            related_view_kwargs={'discount_code_id': '<id>'},
+                            schema='UserSchema',
+                            type_='user')
 
 
 class DiscountCodeList(ResourceList):
@@ -148,6 +162,10 @@ class DiscountCodeList(ResourceList):
         if view_kwargs.get('event_id') and has_access('is_coorganizer', event_id=view_kwargs['event_id']):
             self.schema = DiscountCodeSchemaTicket
             query_ = query_.filter_by(event_id=view_kwargs['event_id'])
+
+        if view_kwargs.get('user_id'):
+            user = safe_query(self, User, 'id', view_kwargs['user_id'], 'user_id')
+            query_ = query_.join(User).filter(User.id == user.id)
 
         elif not view_kwargs.get('event_id') and has_access('is_admin'):
             self.schema = DiscountCodeSchemaEvent

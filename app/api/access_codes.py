@@ -57,7 +57,7 @@ class AccessCodeSchema(Schema):
                                           "quantity should be greater than min-order")
 
     id = fields.Integer(dump_only=True)
-    code = fields.Str(allow_none=True)
+    code = fields.Str(required=True)
     access_url = fields.Url(allow_none=True)
     is_active = fields.Boolean(default=False)
 
@@ -76,13 +76,13 @@ class AccessCodeSchema(Schema):
                          related_view_kwargs={'access_code_id': '<id>'},
                          schema='EventSchema',
                          type_='event')
-    user = Relationship(attribute='user',
-                        self_view='v1.access_code_user',
-                        self_view_kwargs={'id': '<id>'},
-                        related_view='v1.user_detail',
-                        related_view_kwargs={'access_code_id': '<id>'},
-                        schema='UserSchema',
-                        type_='user')
+    marketer = Relationship(attribute='marketer',
+                            self_view='v1.access_code_user',
+                            self_view_kwargs={'id': '<id>'},
+                            related_view='v1.user_detail',
+                            related_view_kwargs={'access_code_id': '<id>'},
+                            schema='UserSchema',
+                            type_='user')
     tickets = Relationship(attribute='tickets',
                            self_view='v1.access_code_tickets',
                            self_view_kwargs={'id': '<id>'},

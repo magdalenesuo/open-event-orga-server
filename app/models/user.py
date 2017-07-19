@@ -10,6 +10,9 @@ from sqlalchemy.ext.hybrid import hybrid_property
 from app.api.helpers.db import get_count
 from app.models.session import Session
 from app.models.speaker import Speaker
+from app.models.notification import Notification
+from app.models.event_invoice import EventInvoice
+from app.models.speaker import Speaker
 from app.models import db
 from app.models.notification import Notification
 from app.models.permission import Permission
@@ -69,6 +72,10 @@ class User(db.Model):
     created_at = db.Column(db.DateTime(timezone=True), default=datetime.now(pytz.utc))
     deleted_at = db.Column(db.DateTime(timezone=True))
     speaker = db.relationship('Speaker', backref="user")
+    access_code = db.relationship('AccessCode', backref="user")
+    discount_code = db.relationship('DiscountCode', backref="user_")
+    event_invoice = db.relationship('EventInvoice', backref="user_")
+    notifications = db.relationship('Notification', backref="user")
 
     @hybrid_property
     def password(self):
